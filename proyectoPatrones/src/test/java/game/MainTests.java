@@ -15,7 +15,7 @@ public class MainTests {
 
 	@Test
 	public void currentGameTestingPlayerMovement() {
-		Game currentGame = new Game(1);
+		Game currentGame = new Game(2);
 		Assert.assertEquals(8,currentGame.getPlayer().getXCoord());
 		Assert.assertEquals(12,currentGame.getPlayer().getYCoord());
 
@@ -59,7 +59,7 @@ public class MainTests {
 	@Test
 	public void currentGameTestingLoadingData() {
 		DataManager testingData = new DataManager();
-		Assert.assertTrue(testingData.login("testnotEmpty","testPwdNotEmpty"));
+		Assert.assertTrue(testingData.login("eanayac@ucenfotec.ac","123"));
 
 		/*Este test no va a pasar porque en MultiUser.login no hay validacion para string vacios*/
 		Assert.assertFalse(testingData.login("",""));
