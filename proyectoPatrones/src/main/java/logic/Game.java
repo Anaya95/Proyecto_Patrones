@@ -6,9 +6,9 @@ public class Game {
 	private Map currentMap;
 	private Player player;
 	
-	public Game() {
-		player = MultiPlayer.loadData();
-		currentMap = new Map("src/main/java/maps/"+MultiMap.getMapName()+".txt",player.getXCoord(),player.getYCoord());
+	public Game(int userID) {
+		player = MultiPlayer.loadData(userID);
+		currentMap = new Map("src/main/java/maps/"+MultiMap.getMapName(userID)+".txt",player.getXCoord(),player.getYCoord());
 		player.setMap(currentMap);
 	}
 	
@@ -24,5 +24,9 @@ public class Game {
 			mssg = player.move(moveTo);
 		}
 		return mssg;
+	}
+
+	public Player getPlayer() {
+		return player;
 	}
 }

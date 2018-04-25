@@ -43,6 +43,7 @@ public class Main {
 	public static void printMap() throws IOException {
 		Iterator<char[]> map = DataManager.getMap();
 		
+		System.out.print("\n\n");
 		while(map.hasNext()) {
 			for(char tile: map.next()) {
 				System.out.print(tile);

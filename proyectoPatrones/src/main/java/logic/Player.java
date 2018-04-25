@@ -6,7 +6,7 @@ import logic.Map.Geography;
 
 public class Player extends Character{
 	private Skills skills;
-	private ArrayList<Items> items;
+	private ArrayList<Items> items = new ArrayList<Items>();
 	private int Xcoord; //vertical
 	private int Ycoord; //horizontal
 	private Map map;
@@ -15,7 +15,6 @@ public class Player extends Character{
 	public Player() {
 		super();
 		this.skills = new Skills();
-		this.items = new ArrayList<Items>();
 		this.Xcoord = 0;
 		this.Ycoord = 0;
 	}
@@ -208,7 +207,7 @@ public class Player extends Character{
 			default: mssgMove[0] = doMission(tile);
 		}
 		
-		if(item != null) {
+		if(item != null) { 
 			items.add(item);
 		}
 
@@ -217,7 +216,12 @@ public class Player extends Character{
 	}
 	
 	public String doMission(char tile) {
+		//Quest mission = MultiQuest.findMission(tile);
 		String mssg = react();
 		return mssg;
+	}
+
+	public ArrayList<Items> getItems() {
+		return items;
 	}
 }

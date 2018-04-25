@@ -5,7 +5,7 @@ import java.util.Iterator;
 
 public class DataManager {
 	
-	private static User user = null;
+	private static User user;
 	private static Game currentGame;
 	
 	public static boolean login(String email, String pass) {
@@ -13,7 +13,7 @@ public class DataManager {
 		user = MultiUser.login(email,pass);
 		
 		if(user != null) {
-			currentGame = new Game();
+			currentGame = new Game(user.getID());
 			exist = true;
 		}
 		return exist;
